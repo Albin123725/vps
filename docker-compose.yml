@@ -6,18 +6,17 @@ services:
     container_name: distributed-minecraft
     restart: unless-stopped
     environment:
-      - APP_URL=${APP_URL}
-      - RENDER_EXTERNAL_URL=${RENDER_EXTERNAL_URL}
+      - APP_URL=${APP_URL:-https://distributed-minecraft.onrender.com}
+      - RENDER_EXTERNAL_URL=${RENDER_EXTERNAL_URL:-https://distributed-minecraft.onrender.com}
     ports:
-      - "80:80"           # Web Panel
-      - "25565:25565"     # Minecraft
-      - "5000:5000"       # API
-    # No volumes - free tier compatible
-    mem_limit: 512m       # Render free tier limit
+      - "80:80"
+      - "25565:25565"
+      - "5000:5000"
+    # No volumes needed - free tier compatible
+    mem_limit: 512m
     mem_reservation: 256m
-    cpus: '0.5'
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
       interval: 30s
       timeout: 10s
       retries: 3
