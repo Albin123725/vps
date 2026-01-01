@@ -1,25 +1,37 @@
-# 🔥 Firebase QEMU VPS - Free Lifetime Virtual Machines
+# QEMU-freeroot
+## QEMU-freeroot is a script to create an isolated ubuntu system (Same as freeroot)
 
-![Banner](https://img.shields.io/badge/Firebase-Free%20VPS-green)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Version](https://img.shields.io/badge/Version-2.0-purple)
+## ✨ New 24/7 VPS Feature & Interactive Menu
+Now with **24/7 background operation** and **interactive ALBIN banner menu**!
+- Keep VM running even when you close laptop/browser
+- Beautiful menu with customization options
+- Systemd service for automatic startup
 
-## 🎯 What is this?
-Create **REAL virtual machines** with QEMU virtualization in **Google Firebase Cloud Shell** - **100% FREE FOREVER**!
+## How to use
+1. Install QEMU
 
-## ✨ Features
-✅ **Real QEMU Virtualization** - Not a simulation  
-✅ **24/7 Background Operation** - Survives browser close  
-✅ **Multiple OS Support** - Ubuntu, Debian, Alpine  
-✅ **Full Customization** - RAM, CPU, Disk, Credentials  
-✅ **ALBIN Interface** - Beautiful menu system  
-✅ **Persistent Storage** - VPS saved across sessions  
-✅ **SSH Access** - Root/User access like real VPS  
-✅ **Free Forever** - No Google Cloud billing needed  
+Arch: `sudo pacman -S qemu`
 
-## 🚀 Quick Start
+Debian/Ubuntu: `sudo apt install qemu qemu-kvm`
 
-### **One-Command Installation** (in Firebase Shell):
+Fedora: `sudo dnf install @virtualization`
+
+Gentoo: `sudo emerge --ask app-emulation/qemu`
+
+RHEL/CentOS: `sudo yum install qemu-kvm`
+
+SUSE: `sudo zypper install qemu`
+
+Google Firebase Studio: copy the `googlefirebasestudio/dev.nix` file and paste it
+
+2. Clone the repo
+
+`git clone https://github.com/BlackCatOfficialytb/QEMU-freeroot.git`
+
+3. Run vm.sh (Traditional way)
+
 ```bash
-# Copy and paste this in Firebase Cloud Shell:
-bash <(curl -s https://raw.githubusercontent.com/Albin123725/Firebase/main/install.sh)
+cd QEMU-freeroot
+sh vm.sh
+# or
+bash vm.sh
